@@ -1,0 +1,27 @@
+Shashith Hansaja
+Cybersecurity Undergraduate | Future Security Engineer
+
+Email: your-email@example.com
+GitHub: https://github.com/shashithhansaja
+LinkedIn: https://www.linkedin.com/in/shashith-hansaja/
+
+Profile
+Passionate about cybersecurity, AI, and building secure systems. Undergraduate at SLIIT specializing in Cybersecurity.
+
+Skills
+- Programming: Java, Python, C
+- Web: HTML, CSS, JavaScript, Spring Boot
+- Databases: MySQL, PostgreSQL, H2
+- Tools: Git, GitHub, Linux, VMware
+- Concepts: Networking, OS, Data Structures, Cybersecurity basics
+
+Projects
+- Hotel Reservation System (Java, Spring Boot, H2, Thymeleaf)
+- Network Scanner Dashboard (Python, Flask)
+- Log Monitoring System (Python, PostgreSQL)
+- YouTube Music App (Node.js, MongoDB, React)
+
+Achievements
+- Winner - Pitch Perfect Competition (IEEE Society)
+- Participant - MS Champs (Month of March)
+- Attended AI/Cursor event in Colombo
