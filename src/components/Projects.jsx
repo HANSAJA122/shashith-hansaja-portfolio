@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useMemo, useState } from 'react'
-import { Activity, Terminal, Music, Cpu, Building, Bike, ExternalLink, Code } from 'lucide-react'
+import { Activity, Terminal, Music, Cpu, Building, Bike, ExternalLink, Code, ScanLine } from 'lucide-react'
 
 const MotionArticle = motion.article
 
@@ -26,6 +26,15 @@ const projects = [
     tech: ['Python', 'PostgreSQL'],
     category: 'Security',
     icon: Terminal,
+  },
+  {
+    name: 'Nexus Security Scanner (CyberAgent)',
+    description:
+      'Full-stack web application for authorized network reconnaissance—probes common ports, captures service banners, and presents findings with severity-oriented context in a structured UI. Next.js/TypeScript frontend with API routes orchestrating a Python banner-grabbing scanner; for authorized testing in permitted environments only.',
+    tech: ['Next.js', 'TypeScript', 'Python', 'REST API'],
+    category: 'Security',
+    icon: ScanLine,
+    codeHref: 'https://github.com/HANSAJA122/nexus-security-scanner',
   },
   {
     name: 'YouTube Music App',
@@ -128,20 +137,37 @@ function Projects() {
             </div>
             <div className="mt-auto flex gap-4 pt-2">
               <a
-                href="#"
+                href={project.codeHref ?? '#'}
+                target={project.codeHref ? '_blank' : undefined}
+                rel={project.codeHref ? 'noreferrer' : undefined}
+                aria-label={project.codeHref ? `View ${project.name} code on GitHub` : undefined}
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-300 transition-colors hover:text-cyan-200 group-hover:text-cyan-400"
               >
                 <Code size={16} className="transition-transform group-hover:-translate-y-0.5" />
                 Code
               </a>
-              <button
-                disabled
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-cyber-muted opacity-50 cursor-not-allowed"
-                title="Live demo not available"
-              >
-                <ExternalLink size={16} />
-                Demo
-              </button>
+              {project.demoHref ? (
+                <a
+                  href={project.demoHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open live demo for ${project.name}`}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-300 transition-colors hover:text-cyan-200 group-hover:text-cyan-400"
+                >
+                  <ExternalLink size={16} />
+                  Demo
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  disabled
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-cyber-muted opacity-50 cursor-not-allowed"
+                  title="Live demo not available"
+                >
+                  <ExternalLink size={16} />
+                  Demo
+                </button>
+              )}
             </div>
           </MotionArticle>
           )
