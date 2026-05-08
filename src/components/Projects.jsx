@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useMemo, useState } from 'react'
-import { Activity, Terminal, Music, Cpu, Building, Bike, ExternalLink, ScanLine } from 'lucide-react'
+import { Activity, Terminal, Music, Cpu, Building, Bike, ExternalLink, ScanLine, BookOpen } from 'lucide-react'
 
 const MotionArticle = motion.article
 
@@ -69,6 +69,16 @@ const projects = [
     category: 'Web',
     icon: Music,
     codeHref: githubRepo('yt-music-streaming-app'),
+  },
+  {
+    name: 'Smart Study Assistant',
+    description:
+      'Full-stack Next.js study workspace with PostgreSQL and Prisma—notes with optional uploads and AI summaries, an education-scoped chat tutor, quiz and flashcard generation, and planner dashboards. Auth.js (NextAuth) for email/password and Google OAuth with JWT sessions; validated, rate-limited Ollama integration on AI routes; deployed on Vercel.',
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Auth.js', 'Vercel'],
+    category: 'Full Stack',
+    icon: BookOpen,
+    codeHref: githubRepo('smart-study-assistant'),
+    demoHref: 'https://smart-study-assistant-xi.vercel.app',
   },
   {
     name: 'Smart Home Automation System',

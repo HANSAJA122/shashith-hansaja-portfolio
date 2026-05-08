@@ -11,7 +11,7 @@ const MotionH2 = motion.h2
 const MotionDiv = motion.div
 
 const statTargets = [
-  { label: 'Projects Built', value: 4 },
+  { label: 'Projects Built', value: 8 },
   { label: 'Core Skill Areas', value: 5 },
   { label: 'Achievements', value: 3 },
 ]
