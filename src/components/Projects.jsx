@@ -27,6 +27,33 @@ const githubRepo = (repo) => `https://github.com/HANSAJA122/${repo}`
 
 const projects = [
   {
+    name: 'Smart Study Assistant',
+    description:
+      'Full-stack Next.js study workspace with PostgreSQL and Prisma—notes with optional uploads and AI summaries, an education-scoped chat tutor, quiz and flashcard generation, and planner dashboards. Auth.js (NextAuth) for email/password and Google OAuth with JWT sessions; validated, rate-limited Ollama integration on AI routes; deployed on Vercel.',
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Auth.js', 'Vercel'],
+    category: 'Full Stack',
+    icon: BookOpen,
+    codeHref: githubRepo('smart-study-assistant'),
+    demoHref: 'https://smart-study-assistant-xi.vercel.app',
+  },
+  {
+    name: 'Nexus Security Scanner (CyberAgent)',
+    description:
+      'Full-stack web application for authorized network reconnaissance—probes common ports, captures service banners, and presents findings with severity-oriented context in a structured UI. Next.js/TypeScript frontend with API routes orchestrating a Python banner-grabbing scanner; for authorized testing in permitted environments only.',
+    tech: ['Next.js', 'TypeScript', 'Python', 'REST API'],
+    category: 'Security',
+    icon: ScanLine,
+    codeHref: githubRepo('nexus-security-scanner'),
+  },
+  {
+    name: 'YouTube Music App',
+    description: 'Music streaming app using YouTube API with backend and frontend.',
+    tech: ['Node.js', 'MongoDB', 'React'],
+    category: 'Web',
+    icon: Music,
+    codeHref: githubRepo('yt-music-streaming-app'),
+  },
+  {
     name: 'Hotel Reservation System',
     description:
       'Full-stack system with FAQ management, support tickets, and admin panel using Spring Boot.',
@@ -52,33 +79,6 @@ const projects = [
     // No matching public repo on this account yet — opens your repos tab; swap when published.
     codeHref: 'https://github.com/HANSAJA122?tab=repositories',
     codeAriaLabelOverride: 'Browse my GitHub repositories (log monitoring source not linked)',
-  },
-  {
-    name: 'Nexus Security Scanner (CyberAgent)',
-    description:
-      'Full-stack web application for authorized network reconnaissance—probes common ports, captures service banners, and presents findings with severity-oriented context in a structured UI. Next.js/TypeScript frontend with API routes orchestrating a Python banner-grabbing scanner; for authorized testing in permitted environments only.',
-    tech: ['Next.js', 'TypeScript', 'Python', 'REST API'],
-    category: 'Security',
-    icon: ScanLine,
-    codeHref: githubRepo('nexus-security-scanner'),
-  },
-  {
-    name: 'YouTube Music App',
-    description: 'Music streaming app using YouTube API with backend and frontend.',
-    tech: ['Node.js', 'MongoDB', 'React'],
-    category: 'Web',
-    icon: Music,
-    codeHref: githubRepo('yt-music-streaming-app'),
-  },
-  {
-    name: 'Smart Study Assistant',
-    description:
-      'Full-stack Next.js study workspace with PostgreSQL and Prisma—notes with optional uploads and AI summaries, an education-scoped chat tutor, quiz and flashcard generation, and planner dashboards. Auth.js (NextAuth) for email/password and Google OAuth with JWT sessions; validated, rate-limited Ollama integration on AI routes; deployed on Vercel.',
-    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Auth.js', 'Vercel'],
-    category: 'Full Stack',
-    icon: BookOpen,
-    codeHref: githubRepo('smart-study-assistant'),
-    demoHref: 'https://smart-study-assistant-xi.vercel.app',
   },
   {
     name: 'Smart Home Automation System',
