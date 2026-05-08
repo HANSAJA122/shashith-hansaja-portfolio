@@ -1,8 +1,29 @@
 import { motion } from 'framer-motion'
 import { useMemo, useState } from 'react'
-import { Activity, Terminal, Music, Cpu, Building, Bike, ExternalLink, Code, ScanLine } from 'lucide-react'
+import { Activity, Terminal, Music, Cpu, Building, Bike, ExternalLink, ScanLine } from 'lucide-react'
 
 const MotionArticle = motion.article
+
+const GithubIcon = ({ size = 16, className = '' }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden
+  >
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4" />
+    <path d="M12 18h.01" />
+  </svg>
+)
+
+const githubRepo = (repo) => `https://github.com/HANSAJA122/${repo}`
 
 const projects = [
   {
@@ -12,6 +33,7 @@ const projects = [
     tech: ['Java', 'Spring Boot', 'H2', 'Thymeleaf'],
     category: 'Full Stack',
     icon: Building,
+    codeHref: githubRepo('Hotel-Room-Reservation-System'),
   },
   {
     name: 'Network Scanner Dashboard',
@@ -19,6 +41,7 @@ const projects = [
     tech: ['Python', 'Flask'],
     category: 'Security',
     icon: Activity,
+    codeHref: githubRepo('Network-Scanner-Vulnerability-Analyzer'),
   },
   {
     name: 'Log Monitoring System',
@@ -26,6 +49,9 @@ const projects = [
     tech: ['Python', 'PostgreSQL'],
     category: 'Security',
     icon: Terminal,
+    // No matching public repo on this account yet — opens your repos tab; swap when published.
+    codeHref: 'https://github.com/HANSAJA122?tab=repositories',
+    codeAriaLabelOverride: 'Browse my GitHub repositories (log monitoring source not linked)',
   },
   {
     name: 'Nexus Security Scanner (CyberAgent)',
@@ -34,7 +60,7 @@ const projects = [
     tech: ['Next.js', 'TypeScript', 'Python', 'REST API'],
     category: 'Security',
     icon: ScanLine,
-    codeHref: 'https://github.com/HANSAJA122/nexus-security-scanner',
+    codeHref: githubRepo('nexus-security-scanner'),
   },
   {
     name: 'YouTube Music App',
@@ -42,6 +68,7 @@ const projects = [
     tech: ['Node.js', 'MongoDB', 'React'],
     category: 'Web',
     icon: Music,
+    codeHref: githubRepo('yt-music-streaming-app'),
   },
   {
     name: 'Smart Home Automation System',
@@ -49,6 +76,8 @@ const projects = [
     tech: ['Arduino', 'IoT Sensors', 'Blynk App'],
     category: 'IoT',
     icon: Cpu,
+    codeHref: 'https://github.com/HANSAJA122?tab=repositories',
+    codeAriaLabelOverride: 'Browse my GitHub repositories (smart home source not linked)',
   },
   {
     name: 'Bike Ride and Rental Service System',
@@ -56,6 +85,8 @@ const projects = [
     tech: ['Java', 'OOP', 'Backend Logic'],
     category: 'Full Stack',
     icon: Bike,
+    codeHref: 'https://github.com/HANSAJA122?tab=repositories',
+    codeAriaLabelOverride: 'Browse my GitHub repositories (bike rental source not linked)',
   },
 ]
 
@@ -137,13 +168,13 @@ function Projects() {
             </div>
             <div className="mt-auto flex gap-4 pt-2">
               <a
-                href={project.codeHref ?? '#'}
-                target={project.codeHref ? '_blank' : undefined}
-                rel={project.codeHref ? 'noreferrer' : undefined}
-                aria-label={project.codeHref ? `View ${project.name} code on GitHub` : undefined}
+                href={project.codeHref}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={project.codeAriaLabelOverride ?? `View ${project.name} on GitHub`}
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-300 transition-colors hover:text-cyan-200 group-hover:text-cyan-400"
               >
-                <Code size={16} className="transition-transform group-hover:-translate-y-0.5" />
+                <GithubIcon size={16} className="transition-transform group-hover:-translate-y-0.5" />
                 Code
               </a>
               {project.demoHref ? (
